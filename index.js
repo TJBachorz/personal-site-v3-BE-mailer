@@ -7,9 +7,8 @@ const message = {
     to: "tjbachorz@gmail.com",
     from: "tjbachorz@gmail.com",
     subject: "Message from tjbachorz.live",
-    text: "test email!",
-    html: "<h1>testing!</h1>",
-            "<p>test two</p>"
+    text: "test text email!",
+    
 };
 
 sgMail
