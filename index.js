@@ -1,14 +1,15 @@
-// const app = require("express")();
-// const cors = require("cors")
+const app = require("express")();
+const cors = require("cors")
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const message = {
-    to: "amybachorz@gmail.com",
+    to: "tjbachorz@gmail.com",
     from: "tjbachorz@gmail.com",
     subject: "Message from tjbachorz.live",
     text: "test email!",
-    html: "<h1>Hi Beeb!! Love you!  I'm testing a new automated mailer!</h1>"
+    html: "<h1>testing!</h1>",
+            "<p>test two</p>"
 };
 
 sgMail
@@ -17,9 +18,9 @@ sgMail
         console.log('Email sent')
     })
     .catch((error) => {
-    console.error(error)
+        console.error(error)
     })
 
 app.post("/mail/send", (request, response) => {
-    request.send()
+    console.log(response)
 })
