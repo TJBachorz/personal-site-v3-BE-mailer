@@ -9,7 +9,7 @@ app.use(cors())
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-app.post("/", (request, response) => {
+app.post("/mail", (request, response) => {
     const email = {
         to: "tjbachorz@gmail.com",
         from: request.body.from,
