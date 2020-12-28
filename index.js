@@ -17,7 +17,7 @@ app.post("/", (request, response) => {
         text: request.body.message
     }
     sgMail.send(email)
-        .then(response.json("success"))
+        .then(response => response.json())
         .catch((error) => {
             response.json(error)
         })
