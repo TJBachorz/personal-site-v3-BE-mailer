@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 app.post("/mail", (request, response) => {
     const email = {
         to: "tjbachorz@gmail.com",
-        from: request.body.from,
+        from: "tjbachorz@gmail.com",
         subject: `${request.body.full_name} -- ${request.body.subject}`,
-        text: request.body.message
+        text: `${request.body.from} ${request.body.message}`
     }
     sgMail.send(email)
         .then(response => response.json())
