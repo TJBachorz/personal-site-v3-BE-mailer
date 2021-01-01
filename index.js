@@ -14,8 +14,7 @@ app.post("/mail", (request, response) => {
         to: "tjbachorz@gmail.com",
         from: "tjbachorz@gmail.com",
         subject: `${request.body.full_name} -- ${request.body.subject}`,
-        text: `${request.body.from} 
-        ${request.body.message}`
+        text: `${request.body.from} ${request.body.message}`
     }
     sgMail.send(email)
         .then(response => response.json())
@@ -23,3 +22,6 @@ app.post("/mail", (request, response) => {
             response.json(error)
         })
 })
+
+const PORT = process.env.PORT || 4000
+app.listen(PORT)
