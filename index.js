@@ -16,6 +16,7 @@ app.post("/mail", (request, response) => {
         subject: `${request.body.full_name} -- ${request.body.from} -- ${request.body.subject}`,
         text: request.body.message
     }
+    
     sgMail.send(email)
         .then(response => response.json())
         .catch((error) => {
